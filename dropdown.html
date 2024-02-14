@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Alpine Dropdown</title>
+</head>
+
+<body>
+    <h1>Dropdown</h1>
+    <div x-data="{ open: false }">
+        <button @click="open = ! open">Toggle</button>
+
+        <div x-show="open" @click.outside="open = false">Contents...</div>
+    </div>
+</body>
+
+</html>
