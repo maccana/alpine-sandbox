@@ -10,11 +10,20 @@
 
 <body>
     <h1>Dropdown</h1>
-    <div x-data="{ open: false }">
-        <button @click="open = ! open">Toggle</button>
+    <div x-data="{ open: false, selectedOption: '' }">
+        <button @click="open = !open">View Select Menu</button>
 
-        <div x-show="open" @click.outside="open = false">Contents...</div>
+        <div x-show="open" @click.outside="open = false">
+            <label for="options">Select an option:</label>
+            <select x-model="selectedOption" id="options">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+            <button @click="open = false">Apply</button>
+        </div>
     </div>
+
 </body>
 
 </html>
